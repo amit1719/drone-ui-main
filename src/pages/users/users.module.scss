@@ -1,0 +1,65 @@
+@import "styles/_variables";
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 54px;
+}
+
+.actions {
+  margin-bottom: 30px;
+  text-align: right;
+}
+
+.avatar {
+  width: 24px;
+  height: 24px;
+}
+
+.btn {
+  min-width: 100px;
+  padding: 6px 20px;
+  font-family: $font-family-primary;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 0 1px var(--shadow-4), 0 0.5px 2px var(--shadow-5);
+
+  &-show-more {
+    margin-top: 20px;
+    color: #0092e4;
+    box-shadow: none;
+  }
+
+  &-user {
+    padding: 10px 24px;
+    font-size: 13px;
+    font-weight: 500;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: var(--color-primary-7);
+    border-radius: 8px;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
+
+.card {
+  padding: 24px;
+  background: var(--background-card);
+  border-radius: 10px;
+  box-shadow: 0 0 1px var(--shadow-4), 0 0.5px 2px var(--shadow-5);
+}
+
+@media only screen and (max-width: 992px) {
+  .wrapper {
+    padding-right: 32px;
+    padding-left: 32px;
+    margin-top: 16px;
+  }
+}

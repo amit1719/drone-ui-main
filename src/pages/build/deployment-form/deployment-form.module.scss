@@ -1,0 +1,86 @@
+.deployment-form {
+  display: flex;
+  flex-flow: column;
+
+  &-row {
+    display: flex;
+    flex-flow: column;
+    margin-bottom: 15px;
+    // input:not([type="radio"]) {
+    //   border: 1px solid var(--border-active);
+    //   box-sizing: border-box;
+    //   border-radius: 4px;
+    //   padding: 6px 12px;
+    //   width: 200px;
+    // }
+  }
+
+  &-radio {
+    &-group {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 200px;
+    }
+  }
+
+  &-parameters {
+    & > * + * {
+      margin-left: 10px;
+    }
+
+    span {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--color-input);
+    }
+
+    button {
+      color: var(--color-error-medium);
+    }
+
+    &-list {
+      margin: 6px 0 12px;
+
+      & > * + * {
+        margin-top: 5px;
+      }
+    }
+
+    &-fields {
+      display: flex;
+
+      button {
+        color: #0092e4;
+      }
+
+      & > * + * {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  &-controls {
+    padding-top: 15px;
+    border-top: 1px solid var(--border-header);
+
+    & > * + * {
+      margin-left: 15px;
+    }
+
+    button {
+      padding: 6px 20px;
+      border-radius: 4px;
+      box-shadow: 0 0 1px var(--shadow-4), 0 0.5px 2px var(--shadow-5);
+    }
+
+    button:first-child {
+      color: white;
+      background-color: #0092e4;
+    }
+
+    button:last-child {
+      background: #fafbfc;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+.card {
+  display: flex;
+  align-items: center;
+  min-width: 800px;
+  padding: 10px;
+  margin: 0 0 1rem 0;
+  overflow: hidden;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 1px var(--shadow-4), 0 0.5px 2px var(--shadow-5);
+
+  &:hover {
+    box-shadow: 0 1px 6px -3px var(--shadow-2);
+    box-shadow: 2px 0 -3px var(--shadow-4), 0 2px 2px var(--shadow-5);
+  }
+
+  &-message {
+    padding: 1rem;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .card {
+    min-width: 100%;
+    max-width: 100%;
+    overflow: auto;
+  }
+}

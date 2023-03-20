@@ -1,0 +1,95 @@
+// CSS reset
+// Global styles
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: initial;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 2px solid transparent;
+  border-radius: 5px !important;
+  box-shadow: inset 0 0 0 6px var(--color-primary-7);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+  box-shadow: inset 0 0 0 6px var(--color-primary-7);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  box-shadow: inset 0 0 0 6px var(--color-primary-9);
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+body {
+  font-family: var(--font-family-primary);
+  font-size: $font-size-base;
+  font-weight: $font-weight-base;
+  line-height: $line-height-base;
+  color: var(--color-heading);
+  background-color: var(--background-main);
+}
+
+header {
+  padding-top: 12px;
+  padding-right: 60px;
+  padding-bottom: 12px;
+  padding-left: 60px;
+  background: var(--background-header);
+  border-bottom: 1px solid var(--border-header);
+
+  h1 {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 28px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+
+section {
+  // max-width: 1270px;
+  // margin-right: auto;
+  // margin-left: auto;
+  padding-top: 22px;
+  padding-right: 60px;
+  padding-bottom: 60px;
+  padding-left: 60px;
+
+  @media only screen and (max-width: 768px) {
+    padding-top: 22px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+  }
+}
+
+.container {
+  // max-width: 1270px;
+  // margin-right: auto;
+  // margin-left: auto;
+}
+
+/** Classes for the displayed toast **/
+.Toastify__toast--success {
+  background-color: var(--color-success-light);
+}
+
+.Toastify__toast--warning {
+  background-color: var(--color-running-medium);
+}
+
+.Toastify__toast--error {
+  background-color: var(--color-error-light);
+}

@@ -1,0 +1,66 @@
+@import "styles/_variables";
+@import "styles/mixins";
+
+.overlay,
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.overlay {
+  z-index: 1000;
+  background-color: var(--shadow-overlay);
+}
+
+.modal-wrapper {
+  z-index: 1010;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.fullscreen {
+    .modal-inner {
+      width: 100vw;
+      height: 100vh;
+      border-radius: 0;
+    }
+  }
+}
+
+.modal-inner {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  background-color: var(--background-card);
+  border-radius: 6px;
+
+  @include sm-down {
+    width: calc(100% - 40px);
+    padding: 20px;
+  }
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 15px;
+  padding-left: 0;
+  margin-bottom: 15px;
+  border-bottom: none;
+
+  h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  button {
+    color: var(--color-text);
+  }
+}

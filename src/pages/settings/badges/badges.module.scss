@@ -1,0 +1,91 @@
+@import "styles/_variables";
+@import "styles/mixins";
+
+.title {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22px;
+  color: var(--color-heading);
+}
+
+.inner {
+  position: relative;
+  padding: 26px 33px;
+  background: var(--background-card);
+  border-radius: 8px;
+  box-shadow: 0 0 1px var(--shadow-4), 0 0.5px 2px var(--shadow-5);
+
+  img {
+    position: absolute;
+    top: 26px;
+    right: 33px;
+  }
+
+  @include md-down {
+    padding-top: 52px;
+  }
+}
+
+.group-badge {
+  display: flex;
+  margin-bottom: 24px;
+
+  & > * + * {
+    margin-left: 33px;
+  }
+
+  @include sm-down {
+    flex-wrap: wrap;
+
+    & > * {
+      flex: 1 1 100%;
+    }
+
+    & > * + * {
+      margin-top: 24px;
+      margin-left: 0;
+    }
+  }
+}
+
+.badge-snippet {
+  position: relative;
+  padding: 9px 61px 9px 22px;
+  font-family: $font-family-code;
+  font-size: 12px;
+  line-height: 26px;
+  color: var(--color-text);
+  white-space: pre-wrap;
+  background: var(--background-light);
+  border-radius: 8px;
+  opacity: 0.75;
+
+  code {
+    display: block;
+    overflow: auto;
+  }
+
+  @include sm-down {
+    white-space: pre;
+  }
+}
+
+.copy-btn {
+  position: absolute;
+  top: 9px;
+  right: 17px;
+  font-weight: 500;
+  color: var(--color-placeholder);
+
+  svg {
+    width: 22px;
+    height: 22px;
+    transition: color 0.2s ease;
+  }
+
+  &:hover {
+    svg {
+      color: var(--color-content);
+    }
+  }
+}

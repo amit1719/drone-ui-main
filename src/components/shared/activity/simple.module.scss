@@ -1,0 +1,56 @@
+.activity {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+
+  .avatar {
+    width: 24px;
+    height: 24px;
+    margin-right: 6px;
+  }
+
+  .chunk {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .info {
+    display: inline-block;
+    margin: 0 2px;
+    color: var(--color-label);
+  }
+
+  strong {
+    padding: 0 8px;
+    line-height: 24px;
+    color: var(--color-heading);
+    text-decoration: none;
+    background: var(--background-light);
+    border-radius: 8px;
+  }
+
+  a {
+    color: var(--color-label);
+    text-decoration: none;
+
+    div {
+      color: var(--color-link);
+    }
+
+    &:hover {
+      div {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.label {
+  margin-right: 4px;
+  margin-left: 4px;
+}
+
+.avatar {
+  width: 24px;
+  height: 24px;
+}

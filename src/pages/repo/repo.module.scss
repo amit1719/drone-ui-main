@@ -1,0 +1,101 @@
+@import "styles/_variables";
+@import "styles/mixins";
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 106px;
+  padding: 0 60px;
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .breadcrumb {
+    margin-bottom: 10px;
+  }
+
+  @include sm-down {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: 180px;
+    padding: 0 20px;
+  }
+}
+
+.tabs {
+  display: flex;
+  width: 100%;
+  padding: 0 60px;
+  background-color: var(--background-card);
+  filter: drop-shadow(0 4px 4px var(--shadow-tabs));
+
+  @include sm-down {
+    padding: 0 20px;
+    overflow-x: scroll;
+  }
+
+  .tab {
+    position: relative;
+    padding: 16px 10px;
+    font-size: 14px;
+    line-height: 19px;
+    color: var(--color-tab);
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: 0.4px;
+
+    &::before {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 3px;
+      content: "";
+      background-color: var(--color-primary-7);
+      border-radius: 4px 4px 0 0;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    + .tab {
+      margin-left: 20px;
+    }
+
+    &-active {
+      &::before {
+        opacity: 1;
+      }
+    }
+
+    &-disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+  }
+}
+
+.new-build-btn {
+  height: 36px;
+  padding: 10px 24px;
+  padding-left: 20px;
+  margin-top: 26px;
+  font-size: 13px;
+  font-weight: 500;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: var(--color-primary-7);
+  border-radius: 8px;
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  span {
+    font-size: 13px !important; // TODO fix base style so we can remove
+  }
+}

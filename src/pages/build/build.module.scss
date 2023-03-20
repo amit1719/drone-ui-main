@@ -1,0 +1,70 @@
+@import "styles/mixins";
+@import "styles/_variables";
+
+.blocked {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin: 20px 60px;
+  background: var(--background-card);
+  border-radius: 8px;
+  box-shadow: 0 0 1px var(--shadow-4), 0 0.5px 2px var(--shadow-5);
+
+  & > * + * {
+    margin-left: 15px;
+  }
+
+  p {
+    font-size: 12px;
+    line-height: 14px;
+    color: var(--color-label);
+  }
+
+  @include sm-down {
+    margin: 20px;
+  }
+}
+
+.no-logs {
+  padding: 25px 60px;
+
+  @include sm-down {
+    padding: 0;
+  }
+}
+
+.controls {
+  display: inline-flex;
+  grid-row: 3;
+  grid-column: 7/-1;
+  align-items: center;
+  justify-content: flex-end;
+
+  & > * + * {
+    margin-left: 20px;
+  }
+
+  &-button {
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    color: var(--color-content);
+    letter-spacing: 0.2px;
+    border: 1px solid var(--color-primary-7);
+    border-radius: 4px;
+
+    &-approve {
+      color: #fff;
+      background-color: var(--color-success-medium);
+      border: none;
+    }
+
+    &-decline {
+      color: #fff;
+      background-color: var(--color-error-medium);
+      border: none;
+    }
+  }
+}

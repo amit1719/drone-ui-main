@@ -1,0 +1,20 @@
+.wrapper {
+  padding: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  text-align: center;
+  border-radius: 4px;
+
+  &-success {
+    background: var(--color-success-light);
+  }
+
+  &-danger {
+    background: var(--color-error-light);
+  }
+
+  &-warning {
+    background-color: var(--color-running-medium);
+  }
+}

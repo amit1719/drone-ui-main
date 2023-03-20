@@ -1,0 +1,64 @@
+@import "styles/_variables";
+@import "styles/mixins";
+
+.select {
+  display: flex;
+  flex-flow: column;
+
+  .label {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 7px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 16px;
+    color: var(--color-label);
+    letter-spacing: 0.2px;
+
+    & > * + * {
+      margin-left: 5px;
+    }
+  }
+
+  &-inner {
+    position: relative;
+    display: inline-flex;
+
+    i {
+      position: absolute;
+      top: 50%;
+      right: 12px;
+      display: block;
+      width: 8px;
+      height: 8px;
+      border-bottom: 1px solid var(--border-focus);
+      border-left: 1px solid var(--border-focus);
+      transform: translateY(-50%) rotate(-45deg);
+    }
+
+    @include sm-down {
+      width: 100% !important;
+    }
+  }
+
+  &-input {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 200px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 22px;
+    color: var(--color-input);
+    text-align: start;
+    background-color: var(--background-card);
+    border: 1px solid var(--border-active);
+    border-radius: 4px;
+    transition: border-color 0.2s ease;
+    appearance: none;
+
+    &:focus {
+      border-color: var(--border-focus);
+      outline: none;
+    }
+  }
+}

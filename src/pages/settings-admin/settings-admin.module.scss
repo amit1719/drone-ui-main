@@ -1,0 +1,65 @@
+.header {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  min-height: 80px;
+  max-height: 80px;
+  padding: 0 60px;
+}
+
+.tabs {
+  display: flex;
+  width: 100%;
+  padding: 0 60px;
+  background-color: var(--background-card);
+  filter: drop-shadow(0 4px 4px var(--shadow-tabs));
+
+  .tab {
+    position: relative;
+    padding: 16px 10px;
+    font-size: 14px;
+    line-height: 19px;
+    color: var(--color-tab);
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: 0.4px;
+
+    &::before {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 3px;
+      content: "";
+      background-color: var(--color-primary-7);
+      border-radius: 4px 4px 0 0;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    + .tab {
+      margin-left: 20px;
+    }
+
+    &-active {
+      &::before {
+        opacity: 1;
+      }
+    }
+
+    &-disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .header,
+  .tabs {
+    padding-right: 32px;
+    padding-left: 32px;
+  }
+}

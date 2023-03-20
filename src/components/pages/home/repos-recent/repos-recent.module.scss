@@ -1,0 +1,125 @@
+@import "styles/_variables";
+@import "styles/mixins";
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-gap: 32px;
+  max-width: 100%;
+  padding-bottom: 32px;
+
+  a {
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:nth-child(5),
+    &:nth-child(6) {
+      display: none;
+    }
+  }
+
+  @include lg-down {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    a:nth-child(4) {
+      display: none;
+    }
+  }
+
+  @include md-down {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    a:nth-child(4),
+    a:nth-child(5),
+    a:nth-child(6) {
+      display: unset;
+    }
+  }
+
+  @include sm-down {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.card {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+  padding: 19px 15px;
+  color: var(--color-text);
+  background: var(--background-card);
+  border-radius: 10px;
+  box-shadow: 0 0 1px var(--shadow-4), 0 0 2px var(--shadow-5);
+  transition: box-shadow 0.1s linear;
+
+  &:hover {
+    box-shadow: 0 1px 6px -3px var(--shadow-2);
+  }
+}
+
+.header {
+  display: flex;
+  margin-bottom: 28px;
+
+  .title {
+    span {
+      display: block;
+      margin-bottom: 3px;
+      overflow: hidden;
+      font-size: 18px;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .namespace {
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--color-item);
+
+      &::after {
+        margin-left: 1px;
+        content: "/";
+      }
+    }
+  }
+
+  .status {
+    margin-left: auto;
+  }
+}
+
+.body {
+  display: block;
+  margin-bottom: 28px;
+
+  span {
+    display: block;
+    display: -webkit-box;
+    max-height: 40px;
+    padding-left: 6px;
+    margin-top: 5px;
+    overflow: hidden;
+    font-size: 13px;
+    line-height: 20px;
+    color: var(--color-item);
+    text-overflow: ellipsis;
+    white-space: normal;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  padding-top: 14px;
+  margin-top: auto;
+  border-top: 1px solid var(--background-light);
+
+  .avatar {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+  }
+}

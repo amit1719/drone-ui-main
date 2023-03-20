@@ -1,0 +1,47 @@
+.diagram-controls {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  display: flex;
+  flex-flow: column;
+
+  &-group {
+    display: flex;
+    flex-flow: column;
+    filter: drop-shadow(0 2px 4px var(--shadow-button));
+  }
+
+  .btn {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    background: var(--background-card);
+    filter: drop-shadow(0 2px 4px var(--shadow-button));
+    border: 1px solid var(--background-graph-node);
+    border-radius: 4px;
+
+    &-zoom-in,
+    &-zoom-out {
+      margin-bottom: 0;
+      filter: none;
+    }
+
+    &-zoom-in {
+      border-bottom-color: rgba(151, 151, 151, 0.24);
+      border-radius: 4px 4px 0 0;
+    }
+
+    &-zoom-out {
+      border-radius: 0 0 4px 4px;
+    }
+
+    svg path {
+      fill: var(--color-graph-control);
+    }
+  }
+}

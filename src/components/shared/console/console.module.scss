@@ -1,0 +1,256 @@
+@import "styles/_variables";
+@import "styles/mixins";
+
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  max-width: 100%;
+  min-height: 500px;
+  color: var(--color-console);
+  background-color: var(--background-console);
+
+  @include sm-down {
+    height: 100vh !important;
+    min-height: unset;
+  }
+}
+
+.header {
+  box-sizing: border-box;
+  flex: 0 0 52px;
+  padding: 0;
+  background-color: inherit;
+  border-bottom: none;
+
+  &-inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 14px;
+    padding-right: 25px;
+    padding-bottom: 13px;
+    padding-left: 27px;
+    background-color: inherit;
+    border-bottom: 1px solid #22222a;
+    border-radius: inherit;
+
+    @include sm-down {
+      padding: 14px 20px;
+    }
+  }
+
+  .info,
+  .controls {
+    display: inline-flex;
+  }
+
+  .controls {
+    svg {
+      width: 22px;
+      height: 22px;
+      color: #b0b1c3;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+
+    & > * + * {
+      margin-left: 20px;
+      color: inherit;
+    }
+
+    .btn-close {
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+
+  .info {
+    font-size: 10px;
+    line-height: 24px;
+
+    h3 {
+      margin-right: 10px;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 24px;
+      color: #b0b1c3;
+      text-transform: uppercase;
+    }
+  }
+
+  .step-time-elapsed {
+    font-size: inherit;
+    line-height: inherit;
+  }
+}
+
+.terminal {
+  flex: auto;
+  padding: 17px 27px;
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  font-family: "Roboto Mono", Courier, monospace;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.2px;
+  background-color: inherit;
+
+  @include sm-down {
+    padding: 17px 20px;
+  }
+}
+
+.output {
+  display: table;
+}
+
+.line {
+  display: table-row;
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+
+.line-number {
+  display: table-cell;
+  padding-right: 28px;
+  font-size: 12px;
+  line-height: 20px;
+  color: var(--color-title);
+  text-align: end;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+  user-select: none;
+
+  @include sm-down {
+    padding-right: 20px;
+  }
+}
+
+.line-content {
+  display: table-cell;
+  width: 100%;
+}
+
+.line-time {
+  display: table-cell;
+  padding-left: 28px;
+  font-size: 12px;
+  line-height: 20px;
+  color: var(--color-title);
+  text-align: end;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.footer {
+  position: relative;
+  display: flex;
+  flex: 0 0 60px;
+  justify-content: space-between;
+  padding-right: 25px;
+  padding-left: 27px;
+  font-family: $font-family-code;
+  background: #22222a;
+  border-top: 1px solid hsla(0, 0%, 100%, 0.05);
+
+  .summary {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .summary-title {
+    flex: 1 1 100%;
+    margin-bottom: 10px;
+    color: var(--color-summary);
+  }
+
+  .summary-info {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    color: var(--color-console);
+  }
+
+  .summary-status {
+    margin-right: 15px;
+
+    svg {
+      color: var(--color-heading);
+    }
+  }
+
+  .summary-controls {
+    display: flex;
+    align-items: center;
+  }
+
+  .scroll-to-top-btn {
+    right: 25px;
+    bottom: 16px;
+    font-size: 20px;
+    color: var(--color-title);
+    transform: translateX(5px);
+  }
+
+  .tmate-link {
+    padding: 0 18px;
+    font-family: Inter;
+    line-height: 32px;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    text-transform: uppercase;
+    background: #4f5162;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.32);
+    transition: all 0.2s ease;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+.btn-show-all-logs {
+  width: 100%;
+  padding: 6px 9px;
+  margin-bottom: 5px;
+  font-family: $font-family-code;
+  font-size: 12px;
+  line-height: 16px;
+  color: #fff;
+  color: #b0b1c4;
+  text-align: center;
+  background: #22222a;
+  border-radius: 6px;
+}
+
+.stage-error {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: #22222a;
+  border-radius: 0.25rem;
+
+  .status {
+    margin-right: 15px;
+  }
+
+  .text {
+    white-space: pre-wrap;
+  }
+}

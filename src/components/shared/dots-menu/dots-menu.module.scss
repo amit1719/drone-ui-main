@@ -1,0 +1,89 @@
+@import "styles/mixins";
+
+.wrapper {
+  display: flex;
+
+  &-menu {
+    position: relative;
+  }
+}
+
+.btn-menu-controller {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  outline: none;
+
+  svg {
+    stroke: var(--color-summary);
+  }
+
+  i {
+    width: 4px;
+    height: 4px;
+    background: var(--color-summary);
+    border-radius: 50%;
+
+    + i {
+      margin-top: 2px;
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active,
+  &.is-open {
+    cursor: default;
+    background-color: var(--border-header);
+    border: 1px solid transparent;
+  }
+
+  &.is-focused:not(&:active) {
+    border: 1px solid rgba(var(--color-primary-7), 0.7);
+  }
+}
+
+.menu {
+  position: absolute;
+  top: calc(100% + 5px);
+  z-index: 3;
+  min-width: 100px;
+  overflow: hidden;
+  background-color: var(--background-menu);
+  border-radius: 4px;
+  box-shadow: 0 0 2px var(--shadow-3), 0 4px 8px var(--shadow-5);
+
+  &-left {
+    left: 0;
+  }
+
+  &-right {
+    right: 0;
+  }
+
+  &-item {
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:focus {
+      color: var(--color-primary-7);
+      background-color: var(--background-focus);
+      outline: none;
+    }
+
+    @include hover {
+      color: var(--color-primary-7);
+    }
+  }
+}
